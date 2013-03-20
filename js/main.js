@@ -7,10 +7,10 @@ $(document).ready(function(){
             type: "POST",
             dataType: "json",
             success: function(data, textStatus, XMLHttpRequest) {
-                $('#mailing').html('<p>Thanks for your interes we will inform you about details soon.</p>');
+                $('#mailing').html('<p>Thanks for your interest. We will inform you about details soon.</p>');
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
-                $('#mailing').html('<p><a href="http://www.youtube.com/watch?v=y8Kyi0WNg40">Something gone terribly wrong</a><p>');
+                $('#mailing').html('<p><a href="http://www.youtube.com/watch?v=y8Kyi0WNg40">Something\'s gone terribly wrong</a><p>');
             }
         });
 

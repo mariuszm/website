@@ -15,6 +15,10 @@ hr {
     border: 1px solid #e0e0e0;
 }
 
+a, a:hover, a:visited {
+    color: #F16529;
+}
+
 header h1, header h2 {
     text-align: center;
 }

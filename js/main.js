@@ -1,18 +1,17 @@
 $(document).ready(function(){
     $('form#mailing').submit(function(){
+        var email = $(this).find('input[name=email]').val();
         $.ajax({
-            url: "http://spreadsheets.google.com/formResponse",
-            data: { formkey: "1dzLvPECEiM_6-z0kjvJfwlACSaUKyc49z8vl7oBfd7g", "entry.1.single": 'abc', 'submit': 'Submit' },
+            url: "/api/subscribe/add",
+            data: { email: email },
             type: "POST",
-            dataType: "xml",
+            dataType: "json",
             success: function(data, textStatus, XMLHttpRequest) {
-                console.log("success");
-                console.log(data);
+                $('#mailing').html('<p>Thanks for your interes we will inform you about details soon.</p>');
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
-                console.log("error");
-                console.log(textStatus);
-            },
+                $('#mailing').html('<p><a href="http://www.youtube.com/watch?v=y8Kyi0WNg40">Something gone terribly wrong</a><p>');
+            }
         });
 
         return false;
